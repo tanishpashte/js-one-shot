@@ -2,4 +2,4 @@
 
 //data types : number, bigint, string, boolean, null, undefined, symbol, objects
 
-console.log(typeof null);
+console.log(typeof null); //however this returns object
