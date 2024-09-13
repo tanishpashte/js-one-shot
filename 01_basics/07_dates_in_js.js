@@ -24,4 +24,8 @@ let myTimeStamp = Date.now()
 console.log(myTimeStamp); //returns the current time in milliseconds
 console.log(myCreatedDate.getTime()); //returns the dates time in milliseconds
 
+//press ctrl+space to get suggestions
 
+myTimeStamp.toLocaleString( 'default', {
+    weekday: "long",
+})
