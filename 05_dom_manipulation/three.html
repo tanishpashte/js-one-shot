@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanish aur Code</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <h1>Ram Ram Mandali !</h1>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(lang){
+        const li = document.createElement('li')
+        // const langName = document.createTextNode(lang)
+        // li.appendChild(langName)
+        li.innerHTML = `${lang}`
+        document.querySelector('.language').appendChild(li)
+        // console.log(el);
+        
+    }
+
+    languages = ['ruby', 'typescript', 'java', 'c++', 'python']
+    languages.forEach(lang => addOptiLanguage(lang));
+    // addLanguage('Python')
+
+    //OPTIMIZED APPROACH
+    function addOptiLanguage(lang){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(lang))
+        document.querySelector('.language').appendChild(li)
+    }
+
+    // EDIT A VALUE 
+    const secondLang = document.querySelector('li:nth-child(2)')
+    const newLi = document.createElement('li')
+    newLi.textContent = "rust"
+    secondLang.replaceWith(newLi)
+
+    //edit
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>golang</li>'
+
+    // remove element
+    document.querySelector('li:nth-child(4)').remove()
+</script>
+</html>
