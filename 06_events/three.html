@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        button{
+            padding: 5px 10px;
+            margin: 10px;
+        }
+    </style>
+    <title>Async functions</title>
+</head>
+<body>
+    <h1>Hello Tanish</h1>
+    <button id="start">Chalu</button>
+    <button id="end">Band</button>
+</body>
+<script>
+    // function greet(){
+    //     console.log("Ki haal chal ?\n");
+    // }
+
+    const sayDate = function (str){
+        console.log(str, Date.now());        
+    }
+
+    let start;
+    
+    document.getElementById('start').addEventListener('click', function(){
+        console.log("Humane start kar diye hai!");
+        start = setInterval(sayDate, 1000, "Tanish")        
+    })
+    document.getElementById('end').addEventListener('click', function(){
+        clearInterval(start)
+        console.log("Rok diye hai!");
+        
+    })
+
+
+</script>
+</html>
