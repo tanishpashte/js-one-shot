@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Number Guessing Game</title>
+    <style>
+        button{
+            padding: 5px 10px;
+            margin: 10px;
+            font-size: 24px;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <!-- <nav>
+      <a href="/" aria-current="page">Home</a>
+      <a target="_blank" href="https://www.youtube.com/@chaiaurcode"
+        >Youtube channel</a
+      >
+    </nav> -->
+
+    <h1>Start should change the Background color every second</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script src="chaiaurcode.js"></script>
+  </body>
+  <script>
+    //generate a random color
+    function generateColor(){
+        const hex = "0123456789ABCDEF"
+        let color = '#'
+        for(let i=0; i<6; i++){
+            color += hex[Math.floor(Math.random()*16)]
+        }
+        return color
+    }
+
+    function applyColor(){
+        let color = generateColor()
+        document.querySelector('body').style.backgroundColor = color
+        console.log(color)
+    }
+    let start;
+    document.getElementById('start').addEventListener('click', function(){
+        //checks if start = null, only then proceeds further
+        if(!start) start = setInterval(applyColor, 500)
+    })
+
+    document.getElementById('stop').addEventListener('click', function(){
+        clearInterval(start)
+        start = null
+    })
+  </script>
+</html>
